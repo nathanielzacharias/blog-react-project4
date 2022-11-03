@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Container from "react-bootstrap/Container";
+
 
 function DisplayArticle(){
-    let title = null
+    const title = useRef([])
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -13,22 +15,22 @@ function DisplayArticle(){
             );
             const data = await res.json();
       
-            setData(res);
-            console.log("data is:", data)
+            setData(res.returnArticle);
+            console.log("data is:", data.returnArticle.title)
+            title.current = data.returnArticle.title
+            console.log("typeof title is: ", typeof(title))
+            console.log("title is:", title)
           };
 
         fetchAPI();
     }, []);
 
-    // useEffect(() => {
-    //     title = data.latestArticle[0].title
-    //     console.log("title is:", title)
-    // },[]);
-
     return(
-        <p>{data}</p>
-        
-    )
+            <h1>
+                { title.current }
+            </h1>
+              
+    );
 }
 
 export default DisplayArticle;

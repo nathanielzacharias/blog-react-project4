@@ -18,9 +18,9 @@ function App() {
         <TopNavbar/>
       </Container>
 
-      <Container>
+      {/* <Container> */}
         <DisplayArticle />
-      </Container>
+      {/* </Container> */}
 
       {/* <Container>
         <Routes>
