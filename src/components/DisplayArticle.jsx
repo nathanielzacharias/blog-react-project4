@@ -1,9 +1,9 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 import Container from "react-bootstrap/Container";
 
 
-function DisplayArticle(){
+function DisplayArticle(props){
     const title = useRef([])
     const author = useRef([])
     const summary = useRef([])
@@ -14,7 +14,7 @@ function DisplayArticle(){
 
         const fetchAPI = async () => {
             const res = await fetch(
-              `${process.env.REACT_APP_BASE_BACKEND_URL}/api/v1/main/latest`
+              `${process.env.REACT_APP_BASE_BACKEND_URL}${props.path}`
             );
             const data = await res.json();
       

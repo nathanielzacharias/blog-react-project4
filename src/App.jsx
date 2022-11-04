@@ -20,9 +20,11 @@ function App() {
 
       <Container>
         <Routes>
-          <Route path="/api/v1/main/latest" element={<DisplayArticle />} />
-          <Route path="/" element={<DisplayArticle />} />
+          <Route path="/" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
+          {/* <Route path="/api/v1/main/latest" element={<ArticleCard  />} /> */}
+          {/* <Route path="/api/v1/main/browse" element={<DisplayArticle />} /> */}
 
+          
 
         </Routes>
       </Container>
