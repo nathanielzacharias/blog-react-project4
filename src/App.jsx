@@ -41,6 +41,7 @@ function App() {
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/all-posts" element={<AllPosts />} />
           <Route path="/edit-post" element={<EditPost />} />
+          {/* <Route path="/logout" element={<Logout />} /> */}
 
 
 

@@ -1,6 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import jwt_decode from "jwt-decode";
 
+function logoutHandler(e) {
+    e.preventDefault();
+    localStorage.removeItem("user_token");
+    window.location.reload(false);
+  }
 
 function TopNavbar() {
 
@@ -35,7 +40,9 @@ function TopNavbar() {
         )} 
 
         {token ? (
-            ""
+            <Nav.Item>
+                <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
+            </Nav.Item>
         ) : (
             <>
             <Nav.Item>

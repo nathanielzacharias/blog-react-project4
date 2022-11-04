@@ -18,18 +18,6 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// function Copyright(props) {
-//     return (
-//       <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//         {'Copyright © '}
-//         <Link color="inherit" href="https://mui.com/">
-//           Your Website
-//         </Link>{' '}
-//         {new Date().getFullYear()}
-//         {'.'}
-//       </Typography>
-//     );
-//   }
   
 const theme = createTheme();
 
@@ -76,7 +64,9 @@ function Login() {
                 localStorage.setItem('user_token', jsonResponse.token)
                 console.log(jsonResponse.token)
 
+
                 navigate('/')
+                window.location.reload(false)
             })
             .catch(err => {
                 console.log(err.response)
@@ -85,7 +75,7 @@ function Login() {
     }
 
     return (
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
       <Grid container 
             component="main" 
             sx={{ height: '60vh' }}
