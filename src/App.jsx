@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import TopNavbar from './components/TopNavbar';
 import Container from 'react-bootstrap/Container';
 import DisplayArticle from './components/DisplayArticle';
@@ -18,16 +18,14 @@ function App() {
         <TopNavbar/>
       </Container>
 
-      {/* <Container> */}
-        <DisplayArticle />
-      {/* </Container> */}
-
-      {/* <Container>
+      <Container>
         <Routes>
-          <Route path="/blog-react-project4/api/v1/main/latest" element={<DisplayArticle />} />
+          <Route path="/api/v1/main/latest" element={<DisplayArticle />} />
+          <Route path="/" element={<DisplayArticle />} />
+
 
         </Routes>
-      </Container> */}
+      </Container>
 
       
     </div>
