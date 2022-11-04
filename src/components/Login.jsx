@@ -86,22 +86,15 @@ function Login() {
 
     return (
         <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '60vh' }}>
+      <Grid container 
+            component="main" 
+            sx={{ height: '60vh' }}
+            spacing={0}
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+      >
         <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-        //   sx={{
-        //     backgroundImage: 'url(https://images.adsttc.com/media/images/577f/e4e8/e58e/ce71/f100/0001/newsletter/green_heart_doug_and_wolf_V5.jpg?1467999440)',
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundColor: (t) =>
-        //       t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-        //     backgroundSize: 'cover',
-        //     backgroundPosition: 'center',
-        //   }}
-        />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
