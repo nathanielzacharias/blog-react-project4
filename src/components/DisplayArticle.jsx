@@ -2,25 +2,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Container from "react-bootstrap/Container";
 import parse from 'html-react-parser';
-import "highlight.js/styles/github.css";
+import "highlight.js/styles/github-dark-dimmed.css";
 import hljs from "highlight.js";
-import { marked } from "marked";
-
-
-const markdown = `
-  \`\`\`typescript
-    const variable = 'hello';
-
-    function getProfile(id: string): {
-      name: string; address: string, photo: string
-    } {
-      return {
-        name: 'ben', address: "ben's house", photo: "/ben.png"
-      };
-    }
-  \`\`\`
-`;
-
 
 function DisplayArticle(props){
     const title = useRef([])
@@ -35,8 +18,7 @@ function DisplayArticle(props){
             cssSelector: 'pre'
           });
         hljs.highlightAll();
-
-      }, []);
+      });
 
     useEffect(() => {
 
@@ -86,12 +68,6 @@ function DisplayArticle(props){
             </h3>
 
             { reactElementForArticle }
-
-            {/* <pre>
-                <code className="language-javascript">const variable = 'raw';</code>
-            </pre>
-
-            <div dangerouslySetInnerHTML={{ __html: marked(markdown) }}></div> */}
 
         </Container>
               
