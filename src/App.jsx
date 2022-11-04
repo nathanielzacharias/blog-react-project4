@@ -9,6 +9,7 @@ import SelectedArticle from './components/SelectedArticle';
 import TokenCheck from './components/TokenCheck';
 import Auth from './components/Auth';
 import Login from './components/Login';
+import Register from './components/Register';
 // import axios from "axios";
 // import React, { useState, useEffect } from "react";
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/api/v1/main/latest" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
 
           <Route path="/api/v1/user/login" element={<TokenCheck component={Login} />} />
+          <Route path="/api/v1/user/register" element={<TokenCheck component={Register} />} />
 
 
 
