@@ -24,13 +24,11 @@ function BrowseArticleCards() {
   }, []);
 
   return (
-    <ul>
-      {articlesArray.current.map((item) => (
-        <li key={item._id}>
-          <p>{item.title}</p>
-        </li>
+    <Container>
+      {articlesArray.current.map((e) => (
+        <ArticleCard key={e._id} title={e.title} author={e.author} summary={e.summary}/>
       ))}
-    </ul>
+    </Container>
     
   );
 }
