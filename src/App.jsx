@@ -6,6 +6,9 @@ import Container from 'react-bootstrap/Container';
 import DisplayArticle from './components/DisplayArticle';
 import BrowseArticleCards from './components/BrowseArticleCards';
 import SelectedArticle from './components/SelectedArticle';
+import TokenCheck from './components/TokenCheck';
+import Auth from './components/Auth';
+import Login from './components/Login';
 // import axios from "axios";
 // import React, { useState, useEffect } from "react";
 
@@ -26,6 +29,10 @@ function App() {
           <Route path="/api/v1/main/browse/:id" element={<SelectedArticle  />} />
           <Route path="/api/v1/main/browse" element={<BrowseArticleCards />} />
           <Route path="/api/v1/main/latest" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
+
+          <Route path="/api/v1/user/login" element={<TokenCheck component={Login} />} />
+
+
 
 
           
