@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Input } from '@mui/material';
 import { useState, useRef } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 
@@ -14,11 +16,16 @@ export default function NewPost() {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [articleBody, setArticleBody] = useState('');
+    console.log(articleBody);
+    console.log(typeof(articleBody));
+    console.log(title, typeof(title))
     const publishedState = useRef(false)
     // const [publishedState, setPublishedState] = useState(false);
+    
 
     const navigate = useNavigate();
 
+    
     const handleSave = (event) => {
       event.preventDefault();
   
@@ -31,7 +38,8 @@ export default function NewPost() {
       console.log({
         title: data.get("title"),
         summary: data.get("summary"),
-        body: data.get("articleBody"),
+        // body: data.get("articleBody"),
+        body: articleBody,
         published: publishedState.current, 
         token: localStorage.getItem("user_token")
       });
@@ -41,7 +49,8 @@ export default function NewPost() {
         body: JSON.stringify({
             title: data.get("title"),
             summary: data.get("summary"),
-            body: data.get("articleBody"),
+             // body: data.get("articleBody"),
+            body: articleBody,
             published: publishedState.current, 
             token: localStorage.getItem("user_token")
         }),
@@ -94,7 +103,7 @@ export default function NewPost() {
         </div>
 
         <div>
-            <TextField
+            {/* <TextField
             id="articleBody"
             name="articleBody"
             label="Article Body"
@@ -102,6 +111,17 @@ export default function NewPost() {
             onInput={ e=> setArticleBody(e.target.value) }
             multiline
             rows={10}
+            /> */}
+
+            <ReactQuill 
+            theme="snow"
+            id="articleBody"
+            name="articleBody"
+            label="Article Body"
+            value={articleBody}
+            // onInput={ e=> setArticleBody(e.target.value) }
+            onChange={setArticleBody}
+            
             />
         </div>
 

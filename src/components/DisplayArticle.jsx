@@ -1,6 +1,7 @@
 // import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 import Container from "react-bootstrap/Container";
+import parse from 'html-react-parser';
 
 
 function DisplayArticle(props){
@@ -9,6 +10,7 @@ function DisplayArticle(props){
     const summary = useRef([])
     const articleBody = useRef([])
     const [data, setData] = useState([]);
+    const [reactElementForArticle, setReactElementForArticle] = useState([]);
 
     useEffect(() => {
 
@@ -29,6 +31,7 @@ function DisplayArticle(props){
             console.log("summary is:", summary)
             articleBody.current = data.returnArticle.body
             console.log("articleBody is:", articleBody)
+            setReactElementForArticle(parse( articleBody.current ))
 
           };
 
@@ -55,9 +58,8 @@ function DisplayArticle(props){
             <h3>
                 Article:
             </h3>
-           <p>
-                {articleBody.current}
-            </p> 
+
+            { reactElementForArticle }
 
         </Container>
               
