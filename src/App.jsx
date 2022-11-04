@@ -5,6 +5,7 @@ import TopNavbar from './components/TopNavbar';
 import Container from 'react-bootstrap/Container';
 import DisplayArticle from './components/DisplayArticle';
 import BrowseArticleCards from './components/BrowseArticleCards';
+import SelectedArticle from './components/SelectedArticle';
 // import axios from "axios";
 // import React, { useState, useEffect } from "react";
 
@@ -22,8 +23,10 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
-          <Route path="/api/v1/main/latest" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
+          <Route path="/api/v1/main/browse/:id" element={<SelectedArticle  />} />
           <Route path="/api/v1/main/browse" element={<BrowseArticleCards />} />
+          <Route path="/api/v1/main/latest" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
+
 
           
 
