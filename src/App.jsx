@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import NewPost from './components/NewPost';
 import AllPosts from './components/AllPosts';
+import EditPost from './components/EditPost';
 // import axios from "axios";
 // import React, { useState, useEffect } from "react";
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/api/v1/user/register" element={<TokenCheck component={Register} />} />
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/all-posts" element={<AllPosts />} />
+          <Route path="/edit-post" element={<EditPost />} />
 
 
 

@@ -2,9 +2,12 @@ import Table from "react-bootstrap/Table";
 import React, { useState, useEffect, useRef } from "react";
 import Container from "react-bootstrap/Container";
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom'
+
+
 
 function AllPosts() {
-
+    const navigate = useNavigate()
     const [data, setData] = useState([]);
     const [refreshAfterDelete, setRefreshAfterDelete] = useState('True');
     const articlesArray = useRef([])
@@ -54,6 +57,12 @@ function AllPosts() {
     setRefreshAfterDelete(!refreshAfterDelete)
   };
 
+  const handleEdit = (event) =>{
+  
+    localStorage.setItem('edit_docID', event.target.getAttribute('docID'))
+    navigate('/edit-post')
+  };
+
   return (
     <Container>
     
@@ -76,7 +85,7 @@ function AllPosts() {
                 <td key='3'>{e.summary}</td>
                 <td key='4'>{e.published.toString()}</td>
                 <td key='5'>
-                    <Button variant="contained" sx={{ m: 2 }} type="submit" name="saveDraft" >Edit</Button>
+                    <Button variant="contained" sx={{ m: 2 }} name="editButton" onClick={handleEdit} docID={e._id}>Edit</Button>
                 </td>
                 <td key='6'>
                     <Button variant="contained" sx={{ m: 2 }} name="deleteButton" onClick={handleDelete} docID={e._id} >Delete</Button>
