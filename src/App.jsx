@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import TopNavbar from './components/TopNavbar';
 import Container from 'react-bootstrap/Container';
 import DisplayArticle from './components/DisplayArticle';
+import BrowseArticleCards from './components/BrowseArticleCards';
 // import axios from "axios";
 // import React, { useState, useEffect } from "react";
 
@@ -21,8 +22,8 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
-          {/* <Route path="/api/v1/main/latest" element={<ArticleCard  />} /> */}
-          {/* <Route path="/api/v1/main/browse" element={<DisplayArticle />} /> */}
+          <Route path="/api/v1/main/latest" element={<DisplayArticle path={'/api/v1/main/latest'} />} />
+          <Route path="/api/v1/main/browse" element={<BrowseArticleCards />} />
 
           
 

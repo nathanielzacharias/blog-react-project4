@@ -8,7 +8,7 @@ function TopNavbar() {
           <Nav.Link href="/api/v1/main/latest">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1">Browse</Nav.Link>
+          <Nav.Link href="/api/v1/main/browse">Browse</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-2">Login</Nav.Link>
