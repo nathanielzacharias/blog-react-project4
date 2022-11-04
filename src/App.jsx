@@ -7,7 +7,6 @@ import DisplayArticle from './components/DisplayArticle';
 import BrowseArticleCards from './components/BrowseArticleCards';
 import SelectedArticle from './components/SelectedArticle';
 import TokenCheck from './components/TokenCheck';
-import Auth from './components/Auth';
 import Login from './components/Login';
 import Register from './components/Register';
 import NewPost from './components/NewPost';
@@ -37,6 +36,7 @@ function App() {
 
           <Route path="/api/v1/user/login" element={<TokenCheck component={Login} />} />
           <Route path="/api/v1/user/register" element={<TokenCheck component={Register} />} />
+          <Route path="/new-post" element={<NewPost />} />
 
 
 

@@ -2,6 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
+import parse from 'html-react-parser';
+import "highlight.js/styles/github-dark-dimmed.css";
+import hljs from "highlight.js";
 
 
 function SelectedArticle(){
@@ -14,6 +17,14 @@ function SelectedArticle(){
     const summary = useRef([])
     const articleBody = useRef([])
     const [data, setData] = useState([]);
+    const [reactElementForArticle, setReactElementForArticle] = useState([]);
+
+    useEffect(() => {
+        hljs.configure({
+            cssSelector: 'pre'
+          });
+        hljs.highlightAll();
+      });
 
     useEffect(() => {
 
@@ -34,6 +45,7 @@ function SelectedArticle(){
             console.log("summary is:", summary)
             articleBody.current = data.selectedArticle[0].body
             console.log("articleBody is:", articleBody)
+            setReactElementForArticle(parse( articleBody.current ))
 
           };
 
@@ -60,9 +72,8 @@ function SelectedArticle(){
             <h3>
                 Article:
             </h3>
-           <p>
-                {articleBody.current}
-            </p> 
+
+            { reactElementForArticle }
 
         </Container>
               

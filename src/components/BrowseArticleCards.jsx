@@ -14,14 +14,15 @@ function BrowseArticleCards() {
       const data = await res.json();
 
       setData(res.articles);
-      articlesArray.current = data.articles;
-        // console.log(data)
-        // console.log(articlesArray);
 
+      articlesArray.current = data.articles;
+      // console.log(data)
+      // console.log(articlesArray);
     };
 
     fetchAPI();
-  }, []);
+
+    }, []);
 
   return (
     <Container>
