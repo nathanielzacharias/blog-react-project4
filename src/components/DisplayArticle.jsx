@@ -5,6 +5,9 @@ import Container from "react-bootstrap/Container";
 
 function DisplayArticle(){
     const title = useRef([])
+    const author = useRef([])
+    const summary = useRef([])
+    const articleBody = useRef([])
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -20,15 +23,43 @@ function DisplayArticle(){
             title.current = data.returnArticle.title
             console.log("typeof title is: ", typeof(title))
             console.log("title is:", title)
+            author.current = data.returnArticle.author
+            console.log("author is:", author)
+            summary.current = data.returnArticle.summary
+            console.log("summary is:", summary)
+            articleBody.current = data.returnArticle.body
+            console.log("articleBody is:", articleBody)
+
           };
 
         fetchAPI();
     }, []);
 
     return(
-            <h1>
-                { title.current }
+        <Container>
+            <h1 >
+                {title.current}
             </h1>
+
+            <h2>
+                by {author.current}
+            </h2>
+
+            <h3>
+                Summary:
+            </h3>
+            <p>
+                {summary.current}
+            </p>
+
+            <h3>
+                Article:
+            </h3>
+           <p>
+                {articleBody.current}
+            </p> 
+
+        </Container>
               
     );
 }
