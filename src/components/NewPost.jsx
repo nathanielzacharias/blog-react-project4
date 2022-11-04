@@ -9,8 +9,6 @@ import { useState, useRef } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-
-
 export default function NewPost() {
 
     const [title, setTitle] = useState('');
@@ -20,12 +18,9 @@ export default function NewPost() {
     console.log(typeof(articleBody));
     console.log(title, typeof(title))
     const publishedState = useRef(false)
-    // const [publishedState, setPublishedState] = useState(false);
     
-
     const navigate = useNavigate();
 
-    
     const handleSave = (event) => {
       event.preventDefault();
   
@@ -62,6 +57,20 @@ export default function NewPost() {
         .catch((err) => {
           toast.error(err.message);
         });
+    };
+
+    const  modules  = {
+        toolbar: [
+            [{ font: [] }],
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            ["bold", "italic", "underline", "strike"],
+            [{ color: [] }, { background: [] }],
+            ["code-block"],
+            [{ list:  "ordered" }, { list:  "bullet" }],
+            [{ indent:  "-1" }, { indent:  "+1" }, { align: [] }],
+            // ["link", "image"],
+            // ["clean"],
+        ],
     };
 
     return (
@@ -103,30 +112,18 @@ export default function NewPost() {
         </div>
 
         <div>
-            {/* <TextField
-            id="articleBody"
-            name="articleBody"
-            label="Article Body"
-            value={articleBody}
-            onInput={ e=> setArticleBody(e.target.value) }
-            multiline
-            rows={10}
-            /> */}
-
             <ReactQuill 
             theme="snow"
             id="articleBody"
             name="articleBody"
             label="Article Body"
             value={articleBody}
-            // onInput={ e=> setArticleBody(e.target.value) }
             onChange={setArticleBody}
-            
+            modules={modules}
             />
         </div>
 
         <div>
-            {/* <Button variant="contained" sx={{ m: 2 }} onClick={handleSave}>Save</Button> */}
             <Button variant="contained" sx={{ m: 2 }} type="submit" name="saveDraft" >Save Draft</Button>
             <Button variant="contained" sx={{ m: 2 }} type="submit" name="saveAndPublish" >Save & Publish</Button>
         </div>
