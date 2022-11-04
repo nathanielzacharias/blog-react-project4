@@ -12,7 +12,7 @@ function ArticleCard(props) {
         <Card.Text>
           {props.summary}
         </Card.Text>
-        <Card.Link href="#">View full article</Card.Link>
+        <Card.Link href={`/api/v1/main/browse/${props.docID}`}>View full article</Card.Link>
         {/* <Card.Link href="#">Another Link</Card.Link> */}
       </Card.Body>
     </Card>

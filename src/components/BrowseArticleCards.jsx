@@ -26,7 +26,7 @@ function BrowseArticleCards() {
   return (
     <Container>
       {articlesArray.current.map((e) => (
-        <ArticleCard key={e._id} title={e.title} author={e.author} summary={e.summary}/>
+        <ArticleCard key={e._id} docID={e._id} title={e.title} author={e.author} summary={e.summary}/>
       ))}
     </Container>
     
