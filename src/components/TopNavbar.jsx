@@ -45,7 +45,7 @@ function TopNavbar() {
 
         {token ? (
             <Nav.Item>
-                <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
+                <Link onClick={logoutHandler}>Logout</Link>
             </Nav.Item>
         ) : (
             <>

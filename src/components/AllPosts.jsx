@@ -55,6 +55,7 @@ function AllPosts() {
       },
     })
     setRefreshAfterDelete(!refreshAfterDelete)
+    window.location.reload(false);
 
   };
 
