@@ -4,11 +4,10 @@ import Card from 'react-bootstrap/Card';
 
 function ArticleCard(props) {
   return (
-    // <Card style={{ width: '18rem' }}>
-    <Card>
+    <Card bg='light' text='dark' className='mb-2'>
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">by {props.author}</Card.Subtitle>
+        {/* <Card.Subtitle className="mb-2 text-muted">by {props.author}</Card.Subtitle> */}
         <Card.Text>
           {props.summary}
         </Card.Text>

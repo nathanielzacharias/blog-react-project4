@@ -1,0 +1,17 @@
+.Article {
+    outline-style: double;
+    border: 1px double black;
+    outline-color: rgb(4, 99, 4);
+    outline-width: thin;
+    margin: 2rem 0;
+    padding: 2rem;
+  }
+
+  .Section {
+    outline-style: double;
+    border: 1px double black;
+    outline-color: rgb(4, 99, 4);
+    outline-width: thin;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }

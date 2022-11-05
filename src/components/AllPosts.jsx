@@ -55,6 +55,7 @@ function AllPosts() {
       },
     })
     setRefreshAfterDelete(!refreshAfterDelete)
+
   };
 
   const handleEdit = (event) =>{
