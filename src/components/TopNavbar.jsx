@@ -1,5 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
 import jwt_decode from "jwt-decode";
+import { Link } from "react-router-dom";
 
 function logoutHandler(e) {
     e.preventDefault();
@@ -18,20 +19,23 @@ function TopNavbar() {
     return(
 
     <Nav fill variant="tabs" defaultActiveKey="/home" >
-        <Nav.Item>
+        {/* <Nav.Item>
           <Nav.Link href="/api/v1/main/latest">Home</Nav.Link>
+        </Nav.Item> */}
+        <Nav.Item>
+          <Link to={"/api/v1/main/latest"}>Home</Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/api/v1/main/browse">Browse</Nav.Link>
+          <Link to={"/api/v1/main/browse"}>Browse</Link>
         </Nav.Item>
 
         {token ? (
         <>
             <Nav.Item>
-                <Nav.Link href="/new-post">New Post</Nav.Link>
+                <Link to={"/new-post"}>New Post</Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/all-posts">All Posts</Nav.Link>
+                <Link to={"/all-posts"}>All Posts</Link>
             </Nav.Item>
         </>
 
