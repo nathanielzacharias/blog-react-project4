@@ -50,10 +50,10 @@ function TopNavbar() {
         ) : (
             <>
             <Nav.Item>
-                <Nav.Link href="/api/v1/user/login">Login</Nav.Link>
+                <Link to={"/api/v1/user/login"}>Login</Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/api/v1/user/register">Register</Nav.Link>
+                <Link to={"/api/v1/user/register"}>Register</Link>
             </Nav.Item>
         </>
         )} 
