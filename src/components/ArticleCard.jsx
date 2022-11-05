@@ -1,6 +1,7 @@
 // import React, { useState, useEffect, useRef } from "react";
 // import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
 
 function ArticleCard(props) {
   return (
@@ -11,7 +12,7 @@ function ArticleCard(props) {
         <Card.Text>
           {props.summary}
         </Card.Text>
-        <Card.Link href={`/api/v1/main/browse/${props.docID}`}>View full article</Card.Link>
+        <Link to={`/api/v1/main/browse/${props.docID}`}>View full article</Link>
         {/* <Card.Link href="#">Another Link</Card.Link> */}
       </Card.Body>
     </Card>
