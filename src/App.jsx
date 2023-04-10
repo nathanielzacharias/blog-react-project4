@@ -18,7 +18,7 @@ import EditPost from './components/EditPost';
 
 function App() {
 
-
+  // console.log(process.env.REACT_APP_BASE_BACKEND_URL)
 
   return (
     <div className="App">
